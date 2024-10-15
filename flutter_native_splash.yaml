@@ -1,0 +1,14 @@
+flutter_native_splash:
+  color: "#FFF9EA"
+  color_dark: "#FFF9EA"
+  image: assets/logos/logo_trans_only_panda_500.png
+  image_dark: assets/logos/logo_trans_only_panda_500.png
+
+  android_12:
+    color: "#FFF9EA"
+    color_dark: "#FFF9EA"
+    image: assets/logos/logo_trans_only_panda.png
+    image_dark: assets/logos/logo_trans_only_panda.png
+  
+  web: false
+  

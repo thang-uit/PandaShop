@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name_development">Panda Shop Development</string>
+	<string name="app_name_staging">Panda Shop Staging</string>
+	<string name="app_name_product">Panda Shop</string>
+</resources>
