@@ -3,17 +3,21 @@ import 'package:get/get.dart';
 import 'package:panda_shop_app/common/assets/images.dart';
 import 'package:panda_shop_app/common/widget/base_widget/base_getview.dart';
 import 'package:panda_shop_app/common/widget/base_widget/base_scaffold.dart';
+import 'package:panda_shop_app/common/widget/base_widget/base_screen.dart';
 import 'package:panda_shop_app/features/authentication/controllers/reset_password_controller.dart';
 import 'package:panda_shop_app/utils/constant/sizes.dart';
 import 'package:panda_shop_app/utils/constant/texts.dart';
 import 'package:panda_shop_app/utils/device/device_utility.dart';
 
-class ResetPasswordScreen extends BaseGetView<ResetPasswordController> {
+class ResetPasswordScreen extends BaseScreen<ResetPasswordController> {
   const ResetPasswordScreen({super.key});
 
   @override
-  Widget buildGetWidget(
+  Widget buildScreen(
       BuildContext context, bool isDarkMode, Color colorThemeMode) {
+
+    final String? id = Get.arguments?['id'] ?? '';
+
     return BaseScaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -40,6 +44,11 @@ class ResetPasswordScreen extends BaseGetView<ResetPasswordController> {
               /// Title & Subtitle
               Text(
                 ConstantTexts.changeYourPasswordTitle,
+                style: Theme.of(context).textTheme.headlineMedium,
+                textAlign: TextAlign.center,
+              ),
+              Text(
+                id ?? "",
                 style: Theme.of(context).textTheme.headlineMedium,
                 textAlign: TextAlign.center,
               ),

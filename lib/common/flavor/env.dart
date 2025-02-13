@@ -22,19 +22,24 @@ abstract class Env {
   }
 
   Future<void> startApp() async {
-    await SentryFlutter.init(
-      (options) {
-        options.dsn =
-            'https://0666ce72a803e3da8f50c60dc2eb45f1@o4508109193805824.ingest.us.sentry.io/4508109285490688';
-        // Set tracesSampleRate to 1.0 to capture 100% of transactions for tracing.
-        // We recommend adjusting this value in production.
-        options.tracesSampleRate = 1.0;
-        // The sampling rate for profiling is relative to tracesSampleRate
-        // Setting to 1.0 will profile 100% of sampled transactions:
-        options.profilesSampleRate = 1.0;
-      },
-      appRunner: () => runApp(App()),
-    );
+    if (Flavor.isEnvProduct) {
+      await SentryFlutter.init(
+        (options) {
+          options.dsn =
+              'https://0666ce72a803e3da8f50c60dc2eb45f1@o4508109193805824.ingest.us.sentry.io/4508109285490688';
+          // Set tracesSampleRate to 1.0 to capture 100% of transactions for tracing.
+          // We recommend adjusting this value in production.
+          options.tracesSampleRate = 1.0;
+          // The sampling rate for profiling is relative to tracesSampleRate
+          // Setting to 1.0 will profile 100% of sampled transactions:
+          options.profilesSampleRate = 1.0;
+        },
+        appRunner: () => runApp(App()),
+      );
+    } else {
+      LoggerMan.debug("Sentry tracking is disabled in development and staging.");
+      runApp(App());
+    }
 
     LoggerMan.debug("Flavor url: ${Flavor.baseURL}");
   }

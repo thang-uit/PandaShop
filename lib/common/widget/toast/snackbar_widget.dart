@@ -85,7 +85,7 @@ class SnackBarUtil {
             color: ConstantColors.white,
           )),
     );
-    LoggerMan.debug("Show snackbar title: $title | message: $message");
+    LoggerMan.debug("Show snackBar title: $title | message: $message");
 
     // await Future<dynamic>.delayed(const Duration(seconds: 5));
   }

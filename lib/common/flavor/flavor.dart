@@ -6,13 +6,17 @@ class Flavor {
   static String get baseURL {
     switch (flavorType) {
       case FlavorType.development:
-        return 'https://jsonplaceholder.typicode.com';
+        return 'http://45.119.85.178:8632';
       case FlavorType.staging:
-        return 'https://jsonplaceholder.typicode.com';
+        return 'http://45.119.85.178:8632';
       case FlavorType.production:
-        return 'https://jsonplaceholder.typicode.com';
+        return 'http://45.119.85.178:8632';
       default:
-        return 'https://jsonplaceholder.typicode.com';
+        return 'http://45.119.85.178:8632';
     }
+  }
+
+  static bool get isEnvProduct {
+    return FlavorType.production == flavorType;
   }
 }

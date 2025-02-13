@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:panda_shop_app/common/assets/images.dart';
 import 'package:panda_shop_app/common/widget/base_widget/base_stateless.dart';
 import 'package:panda_shop_app/utils/constant/colors.dart';
 
@@ -64,6 +65,11 @@ class RoundImage extends BaseStatelessWidget {
                   ? NetworkImage(imageUrl)
                   : AssetImage(imageUrl) as ImageProvider,
               fit: fit,
+              errorBuilder: (context, error, stackTrace) {
+                return Image(
+                  image: AssetImage(ConstantImages.appLogoBgFull),
+                );
+              },
             ),
           )),
     );

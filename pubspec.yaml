@@ -51,6 +51,9 @@ dependencies:
   # Link: https://pub.dev/packages/get_storage
   get_storage: ^2.1.1
 
+  # https://pub.dev/packages/encrypt
+  encrypt: ^5.0.3
+
   # Link: https://pub.dev/packages/font_awesome_flutter
   font_awesome_flutter: ^10.7.0
 
@@ -89,6 +92,27 @@ dependencies:
 
   # https://pub.dev/packages/dio
   dio: ^5.7.0
+
+  # https://pub.dev/packages/infinite_scroll_pagination
+  infinite_scroll_pagination: ^4.0.0
+
+  # https://pub.dev/packages/app_links
+  app_links: ^6.3.2
+
+  # https://pub.dev/packages/flutter_math_fork
+  flutter_math_fork: ^0.7.3
+
+  # https://pub.dev/packages/flutter_markdown
+  flutter_markdown: ^0.7.5
+
+  # https://pub.dev/packages/flutter_tex
+#  flutter_tex: ^4.0.13
+
+#  # https://pub.dev/packages/flutter_html_v3
+#  flutter_html_v3: ^3.0.6
+#
+#  # https://pub.dev/packages/flutter_html_math
+#  flutter_html_math: ^3.0.0-beta.2
 
 #------------------------------------------- PACKAGES ----------------------------------------------
 

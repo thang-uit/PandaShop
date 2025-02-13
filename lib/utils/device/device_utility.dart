@@ -18,6 +18,16 @@ class DeviceUtils {
     );
   }
 
+  static Future<void> setStatusBarTextColor({required bool isDark}) async {
+    SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(
+        statusBarIconBrightness: isDark ? Brightness.dark : Brightness.light,
+        statusBarBrightness: isDark ? Brightness.light : Brightness.dark,
+        // statusBarColor: Colors.transparent,
+      ),
+    );
+  }
+
   static bool isLandscapeOrientation(BuildContext? context) {
     if (context != null) {
       final viewInsets = View.of(context).viewInsets;
@@ -100,7 +110,8 @@ class DeviceUtils {
   }
 
   static Future<bool> isPhysicalDevice() async {
-    return defaultTargetPlatform == TargetPlatform.android || defaultTargetPlatform == TargetPlatform.iOS;
+    return defaultTargetPlatform == TargetPlatform.android ||
+        defaultTargetPlatform == TargetPlatform.iOS;
   }
 
   static void vibrate(Duration duration) {
@@ -108,12 +119,14 @@ class DeviceUtils {
     Future.delayed(duration, () => HapticFeedback.vibrate());
   }
 
-  static Future<void> setPreferredOrientations(List<DeviceOrientation> orientations) async {
+  static Future<void> setPreferredOrientations(
+      List<DeviceOrientation> orientations) async {
     await SystemChrome.setPreferredOrientations(orientations);
   }
 
   static void showStatusBar() {
-    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: SystemUiOverlay.values);
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual,
+        overlays: SystemUiOverlay.values);
   }
 
   static void hideStatusBar() {

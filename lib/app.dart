@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:panda_shop_app/common/routes/app_routes.dart';
 import 'package:panda_shop_app/common/widget/base_widget/base_stateless.dart';
+import 'package:panda_shop_app/features/applink/app_link_controller.dart';
 import 'package:panda_shop_app/utils/logging/logger.dart';
 import 'package:panda_shop_app/utils/theme/theme.dart';
 
@@ -25,6 +26,7 @@ class App extends BaseStatelessWidget {
         theme: TAppTheme.lightTheme,
         darkTheme: TAppTheme.darkTheme,
         // home: const SplashScreen(),
+        initialBinding: BindingsBuilder(() => Get.put(AppLinkController())),
         getPages: AppRoutes.routes,
         showPerformanceOverlay: false,
         showSemanticsDebugger: false,

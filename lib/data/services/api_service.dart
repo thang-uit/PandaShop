@@ -1,8 +1,12 @@
+import 'dart:async';
+import 'dart:convert';
+import 'dart:typed_data';
+
 import 'package:dio/dio.dart';
 import 'package:panda_shop_app/common/flavor/Flavor.dart';
 
 class ApiService {
-  static final _options = BaseOptions(
+  static final commonOptions = BaseOptions(
     baseUrl: Flavor.baseURL,
     connectTimeout: const Duration(seconds: 90),
     receiveTimeout: const Duration(seconds: 90),
@@ -10,7 +14,7 @@ class ApiService {
   );
 
   // dio instance
-  final Dio _dio = Dio(_options)..interceptors.add(LogInterceptor());
+  final Dio _dio = Dio(commonOptions)..interceptors.add(LogInterceptor());
 
   // GET request
   Future<Response> get(
@@ -55,6 +59,36 @@ class ApiService {
         onReceiveProgress: onReceiveProgress,
       );
       return response;
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  // POST request for Streaming
+  Stream<String> postStream(
+    String url, {
+    dynamic data,
+    Map<String, dynamic>? queryParameters,
+    Options? options,
+    CancelToken? cancelToken,
+  }) async* {
+    try {
+      final response = await _dio.post<ResponseBody>(
+        url,
+        data: data,
+        queryParameters: queryParameters,
+        options: options?.copyWith(responseType: ResponseType.stream) ??
+            Options(responseType: ResponseType.stream),
+        cancelToken: cancelToken,
+      );
+
+      final stream = response.data?.stream
+          .transform(StreamTransformer.castFrom(utf8.decoder));
+      if (stream != null) {
+        await for (final chunk in stream) {
+          yield chunk;
+        }
+      }
     } catch (e) {
       rethrow;
     }

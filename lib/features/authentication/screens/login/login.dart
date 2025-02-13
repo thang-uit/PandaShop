@@ -7,7 +7,6 @@ import 'package:panda_shop_app/common/widget/base_widget/base_scaffold.dart';
 import 'package:panda_shop_app/common/widget/base_widget/base_stateless.dart';
 import 'package:panda_shop_app/common/widget/toast/snackbar_widget.dart';
 import 'package:panda_shop_app/features/authentication/controllers/login_controller.dart';
-import 'package:panda_shop_app/features/main/main_screen.dart';
 import 'package:panda_shop_app/utils/constant/colors.dart';
 import 'package:panda_shop_app/utils/constant/enums.dart';
 import 'package:panda_shop_app/utils/constant/sizes.dart';
@@ -193,7 +192,8 @@ class LoginForm extends BaseStatelessWidget {
             width: double.infinity,
             child: ElevatedButton(
               onPressed: () {
-                Get.offAll(const MainScreen());
+                // Get.offAllNamed(AppRoutes.main);
+                Get.offAllNamed(AppRoutes.testChat);
               },
               child: const Text(ConstantTexts.signIn),
             ),

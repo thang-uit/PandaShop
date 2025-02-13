@@ -18,3 +18,5 @@ enum PaymentMethods {
 }
 
 enum ToastType { success, info, error, warning }
+
+enum AppLinkType { deeplink, dynamicLink }
