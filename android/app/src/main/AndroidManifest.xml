@@ -27,16 +27,16 @@
 	<application
 		android:name="${applicationName}"
 		android:icon="@mipmap/ic_launcher"
-		android:label="@string/app_name">
+		android:label="@string/app_name"
+		android:hardwareAccelerated="true"
+		android:usesCleartextTraffic="true">
 		<activity
 			android:name=".MainActivity"
 			android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
 			android:exported="true"
-			android:hardwareAccelerated="true"
-			android:launchMode="singleTop"
+			android:launchMode="singleTask"
 			android:taskAffinity=""
 			android:theme="@style/LaunchTheme"
-			android:usesCleartextTraffic="true"
 			android:windowSoftInputMode="adjustResize">
 			<!-- Specifies an Android theme to apply to this Activity as soon as
 				 the Android process has started. This theme is visible to the user
@@ -51,17 +51,17 @@
 				<category android:name="android.intent.category.LAUNCHER" />
 			</intent-filter>
 
-			<!-- Intent filter cho Dynamic Link -->
-			<intent-filter android:autoVerify="true">
-				<action android:name="android.intent.action.VIEW" />
+<!--			&lt;!&ndash; Intent filter cho Dynamic Link &ndash;&gt;-->
+<!--			<intent-filter android:autoVerify="true">-->
+<!--				<action android:name="android.intent.action.VIEW" />-->
 
-				<category android:name="android.intent.category.DEFAULT" />
-				<category android:name="android.intent.category.BROWSABLE" />
+<!--				<category android:name="android.intent.category.DEFAULT" />-->
+<!--				<category android:name="android.intent.category.BROWSABLE" />-->
 
-				<data
-					android:host="page.altek.com.vn"
-					android:scheme="https" />
-			</intent-filter>
+<!--				<data-->
+<!--					android:host="page.altek.com.vn"-->
+<!--					android:scheme="https" />-->
+<!--			</intent-filter>-->
 
 			<!-- Intent filter cho Deep Link -->
 			<intent-filter>

@@ -7,7 +7,6 @@ import 'package:panda_shop_app/bindings/on_boarding_binding.dart';
 import 'package:panda_shop_app/bindings/reset_password_binding.dart';
 import 'package:panda_shop_app/bindings/signup_binding.dart';
 import 'package:panda_shop_app/bindings/splash_binding.dart';
-import 'package:panda_shop_app/bindings/test_chat_binding.dart';
 import 'package:panda_shop_app/bindings/verify_email_binding.dart';
 import 'package:panda_shop_app/bindings/wishlist_binding.dart';
 import 'package:panda_shop_app/features/authentication/screens/login/login.dart';
@@ -17,7 +16,6 @@ import 'package:panda_shop_app/features/authentication/screens/password/reset_pa
 import 'package:panda_shop_app/features/authentication/screens/signup/signup.dart';
 import 'package:panda_shop_app/features/authentication/screens/signup/verify_email.dart';
 import 'package:panda_shop_app/features/main/screens/main_screen.dart';
-import 'package:panda_shop_app/features/main/screens/test_chat_screen.dart';
 import 'package:panda_shop_app/features/shop/screens/wishlist/wishlist.dart';
 import 'package:panda_shop_app/features/splash/screens/splash.dart';
 
@@ -34,7 +32,6 @@ abstract class AppRoutes {
   static const String main = '/main';
   static const String wishlist = '/wishlist';
 
-  static const String testChat = '/testChat';
 
   // ============================================================
 
@@ -118,14 +115,6 @@ abstract class AppRoutes {
       // transition: Transition.rightToLeftWithFade,
       // transitionDuration: const Duration(milliseconds: 300),
       // curve: Curves.fastLinearToSlowEaseIn,
-    ),
-    GetPage<TestChatScreen>(
-      name: testChat,
-      page: () => TestChatScreen(),
-      binding: TestChatBinding(),
-      transition: Transition.rightToLeftWithFade,
-      transitionDuration: const Duration(milliseconds: 300),
-      curve: Curves.fastLinearToSlowEaseIn,
     ),
   ];
 }

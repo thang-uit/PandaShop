@@ -37,14 +37,14 @@ class WishlistScreen extends BaseScreen<WishlistController> {
                 onTapAdd: () async {
                   // SnackBarUtil.show(item.title, type: ToastType.info)
 
-                  String deeplink =
-                      "pandashop.app://data?screen=resetPassword&id=${item.id}";
-
-                  if (await canLaunchUrlString(deeplink)) {
-                    await launchUrlString(deeplink);
-                  } else {
-                    LoggerMan.debug("Could not launch deeplink");
-                  }
+                  // String deeplink =
+                  //     "pandashop.app://?screen=resetPassword&id=${item.id}";
+                  //
+                  // if (await canLaunchUrlString(deeplink)) {
+                  //   await launchUrlString(deeplink);
+                  // } else {
+                  //   LoggerMan.debug("Could not launch deeplink");
+                  // }
                 },
               )),
     );

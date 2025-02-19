@@ -192,8 +192,7 @@ class LoginForm extends BaseStatelessWidget {
             width: double.infinity,
             child: ElevatedButton(
               onPressed: () {
-                // Get.offAllNamed(AppRoutes.main);
-                Get.offAllNamed(AppRoutes.testChat);
+                Get.offAllNamed(AppRoutes.main);
               },
               child: const Text(ConstantTexts.signIn),
             ),

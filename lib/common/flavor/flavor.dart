@@ -6,13 +6,13 @@ class Flavor {
   static String get baseURL {
     switch (flavorType) {
       case FlavorType.development:
-        return 'http://45.119.85.178:8632';
+        return 'https://jsonplaceholder.typicode.com';
       case FlavorType.staging:
-        return 'http://45.119.85.178:8632';
+        return 'https://jsonplaceholder.typicode.com';
       case FlavorType.production:
-        return 'http://45.119.85.178:8632';
+        return 'https://jsonplaceholder.typicode.com';
       default:
-        return 'http://45.119.85.178:8632';
+        return 'https://jsonplaceholder.typicode.com';
     }
   }
 

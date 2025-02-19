@@ -39,7 +39,7 @@ class WishlistController extends BaseViewModel with StateMixin<List<Photo>> {
     super.onClose();
   }
 
-  void fetchPhoto({int page = 1, int limit = 2}) async {
+  void fetchPhoto({int page = 1, int limit = 20}) async {
     try {
       final response = await photoRepository.getPhotos(data: {
         '_page': page,
